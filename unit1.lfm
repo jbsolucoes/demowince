@@ -1,0 +1,85 @@
+object Form1: TForm1
+  Left = 327
+  Height = 270
+  Top = 151
+  Width = 240
+  Caption = 'Demo SQLite'
+  ClientHeight = 270
+  ClientWidth = 240
+  OnCreate = FormCreate
+  LCLVersion = '1.4.0.4'
+  object gridDados: TDBGrid
+    Left = 8
+    Height = 195
+    Top = 37
+    Width = 224
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'id'
+        Width = 30
+        FieldName = 'id'
+      end    
+      item
+        Title.Caption = 'nome'
+        Width = 150
+        FieldName = 'nome'
+      end>
+    DataSource = dsDados
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 8
+    Height = 25
+    Top = 7
+    Width = 70
+    Caption = 'Insert'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+  object Button2: TButton
+    Left = 80
+    Height = 25
+    Top = 7
+    Width = 76
+    Caption = 'Edit'
+    OnClick = Button2Click
+    TabOrder = 2
+  end
+  object Button3: TButton
+    Left = 157
+    Height = 25
+    Top = 7
+    Width = 75
+    Caption = 'Delete'
+    OnClick = Button3Click
+    TabOrder = 3
+  end
+  object Button4: TButton
+    Left = 157
+    Height = 25
+    Top = 240
+    Width = 75
+    Caption = 'Exit'
+    OnClick = Button4Click
+    TabOrder = 4
+  end
+  object dsDados: TDataSource
+    DataSet = qryDados
+    left = 173
+    top = 117
+  end
+  object qryDados: TSQLQuery
+    IndexName = 'DEFAULT_ORDER'
+    FieldDefs = <>
+    Database = dm.dbConn
+    Transaction = dm.trGeral
+    SQL.Strings = (
+      'select * from pessoas'
+    )
+    Params = <>
+    left = 144
+    top = 117
+  end
+end

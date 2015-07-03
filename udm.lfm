@@ -1,0 +1,27 @@
+object dm: Tdm
+  OnCreate = DataModuleCreate
+  OnDestroy = DataModuleDestroy
+  OldCreateOrder = False
+  Height = 217
+  HorizontalOffset = 313
+  VerticalOffset = 150
+  Width = 218
+  object dbConn: TSQLite3Connection
+    Connected = False
+    LoginPrompt = False
+    DatabaseName = 'c:\projetos\demowince\demo.db'
+    KeepConnection = False
+    Transaction = trGeral
+    LogEvents = []
+    Options = [sloTransactions]
+    left = 25
+    top = 26
+  end
+  object trGeral: TSQLTransaction
+    Active = False
+    Action = caNone
+    Database = dbConn
+    left = 25
+    top = 72
+  end
+end
