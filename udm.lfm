@@ -19,7 +19,7 @@ object dm: Tdm
   end
   object trGeral: TSQLTransaction
     Active = False
-    Action = caNone
+    Action = caCommitRetaining
     Database = dbConn
     left = 25
     top = 72

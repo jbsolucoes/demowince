@@ -25,6 +25,7 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure qryDadosAfterPost(DataSet: TDataSet);
   private
     { private declarations }
   public
@@ -42,12 +43,19 @@ implementation
 
 procedure TForm1.Button4Click(Sender: TObject);
 begin
-  Application.ExeName;
   Close;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+  qrydados.open;
+end;
+
+procedure TForm1.qryDadosAfterPost(DataSet: TDataSet);
+begin
+  qrydados.ApplyUpdates;
+
+  qrydados.close;
   qrydados.open;
 end;
 

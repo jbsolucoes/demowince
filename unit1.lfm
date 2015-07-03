@@ -71,8 +71,8 @@ object Form1: TForm1
     top = 117
   end
   object qryDados: TSQLQuery
-    IndexName = 'DEFAULT_ORDER'
     FieldDefs = <>
+    AfterPost = qryDadosAfterPost
     Database = dm.dbConn
     Transaction = dm.trGeral
     SQL.Strings = (
